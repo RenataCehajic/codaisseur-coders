@@ -12,7 +12,7 @@ export function startLoadingPost() {
 
 export function postFullyFetched(data) {
   return {
-    type: "postPage/postsFullyFetched",
+    type: "postPage/postFullyFetched",
     payload: data,
   };
 }
@@ -21,11 +21,14 @@ export function fetchPost(id) {
   return async function thunk(dispatch, getState) {
     dispatch(startLoadingPost());
 
+    console.log(API_URL);
+    console.log("Hello from actions");
     const [postResponse, commentsResponse] = await Promise.all([
       axios.get(`${API_URL}/posts/${id}`),
       axios.get(`${API_URL}/posts/${id}/comments`),
     ]);
 
+    console.log(postResponse);
     dispatch(
       postFullyFetched({
         post: postResponse.data,
