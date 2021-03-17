@@ -1,9 +1,8 @@
 import { combineReducers } from "redux";
-// import someFeatureReducer from "./someFeature/reducer";
+import feedSliceReducer from "./feed/reducer";
 
 const reducer = combineReducers({
-  // someFeature: someFeatureReducer
-  // etc...
+  feed: feedSliceReducer,
 });
 
 export default reducer;
