@@ -17,6 +17,13 @@ export default function feedSliceReducer(state = initialState, action) {
         posts: [...state.posts, ...action.payload],
       };
     }
+    case "feed/addOne": {
+      const newPost = action.payload;
+      return {
+        ...state,
+        posts: [newPost, ...state.posts],
+      };
+    }
     default: {
       return state;
     }

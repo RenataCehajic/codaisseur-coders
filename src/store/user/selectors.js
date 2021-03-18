@@ -1,1 +1,1 @@
-export const selectUserProfile = (reduxState) => reduxState.user.profile;
+export const selectUserProfile = (reduxState) => reduxState.user;
