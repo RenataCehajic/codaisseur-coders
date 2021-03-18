@@ -27,6 +27,7 @@ export default function SignupPage() {
 
   return (
     <div>
+      <h2>Sign Up</h2>
       <form onSubmit={onFormSubmit}>
         <div>
           <label style={{ marginRight: 20 }}>Name</label>

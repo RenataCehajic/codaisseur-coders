@@ -24,3 +24,14 @@ export const signUp = (name, email, password, history) => async (
     console.log(e.message);
   }
 };
+
+export const login = (email, password) => async (dispatch, getState) => {
+  try {
+    dispatch(setLoading());
+
+    const response = await axios.post("/login", { email, password });
+    console.log(response);
+  } catch (e) {
+    console.log(e.message);
+  }
+};
