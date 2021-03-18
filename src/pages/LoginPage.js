@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { login } from "../store/user/actions";
 
 export default function LoginPage() {
@@ -7,11 +8,12 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const onFormSubmit = (e) => {
     e.preventDefault();
     console.log("Login", email, password);
-    dispatch(login(email, password));
+    dispatch(login(email, password, history));
   };
 
   return (
